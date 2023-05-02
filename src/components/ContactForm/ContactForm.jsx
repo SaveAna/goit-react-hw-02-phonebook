@@ -1,5 +1,6 @@
 import propTypes from 'prop-types';
 import React, { Component } from 'react';
+import { nanoid } from 'nanoid';
 
 export class ContactForm extends Component {
   state = {
@@ -15,7 +16,7 @@ export class ContactForm extends Component {
   onSubmit = evt => {
     evt.preventDefault();
     const form = evt.currentTarget;
-    this.props.onSubmit(this.state);
+    this.props.addContact({ id: nanoid(6), ...this.state });
     form.reset();
   };
 
