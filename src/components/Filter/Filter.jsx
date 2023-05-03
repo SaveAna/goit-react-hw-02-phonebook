@@ -1,4 +1,4 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 export function Filter({ value, onChange }) {
@@ -6,6 +6,6 @@ export function Filter({ value, onChange }) {
 }
 
 Filter.propTypes = {
-  value: propTypes.string.isRequired,
-  onChange: propTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };

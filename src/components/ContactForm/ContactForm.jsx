@@ -8,7 +8,7 @@ export class ContactForm extends Component {
     number: '',
   };
 
-  onChange = evt => {
+  handleChange = evt => {
     const { name, value } = evt.target;
     this.setState({ [name]: value });
   };
@@ -31,7 +31,7 @@ export class ContactForm extends Component {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           value={name}
-          onChange={this.onChange}
+          onChange={this.handleChange}
         />
         <label>Number </label>
         <input
@@ -41,7 +41,7 @@ export class ContactForm extends Component {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           value={number}
-          onChange={this.onChange}
+          onChange={this.handleChange}
         />
         <button type="submit">Add contact</button>
       </form>
@@ -50,5 +50,5 @@ export class ContactForm extends Component {
 }
 
 ContactForm.propTypes = {
-  onSubmit: propTypes.func,
+  handleSubmit: propTypes.func,
 };
