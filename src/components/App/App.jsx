@@ -36,7 +36,7 @@ export class App extends Component {
     return this.state.contacts.filter(contact => {
       return contact.name
         .toLowerCase()
-        .include(this.state.filter.toLowerCase().trim());
+        .includes(this.state.filter.toLowerCase().trim());
     });
   };
 
