@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
-import { Container } from './App.styled';
+import { Container, Title } from './App.styled';
 import { Filter } from 'components/Filter/Filter';
 
 export class App extends Component {
@@ -44,9 +44,9 @@ export class App extends Component {
     const filteredContacts = this.handleFilter();
     return (
       <Container>
-        <h2>Phonebook</h2>
+        <h1>Phonebook</h1>
         <ContactForm addContact={this.handleAddContact} />
-        <h2> Contacts</h2>
+        <Title> Contacts</Title>
         {this.state.contacts.length > 2 && (
           <Filter value={this.state.filter} handleChange={this.handleChange} />
         )}
