@@ -52,7 +52,7 @@ export class App extends Component {
         )}
         <ContactList
           contacts={filteredContacts}
-          onDelete={this.deleteContact}
+          deleteContact={this.deleteContact}
         />
       </Container>
     );
