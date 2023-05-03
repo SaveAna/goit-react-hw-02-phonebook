@@ -13,18 +13,16 @@ export class ContactForm extends Component {
     this.setState({ [name]: value });
   };
 
-  onSubmit = evt => {
+  handleSubmit = evt => {
     evt.preventDefault();
-    const form = evt.currentTarget;
     this.props.addContact({ id: nanoid(6), ...this.state });
-    form.reset();
   };
 
   render() {
     const { name, number } = this.state;
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <label>Name </label>
         <input
           type="text"
@@ -52,5 +50,5 @@ export class ContactForm extends Component {
 }
 
 ContactForm.propTypes = {
-  onSubmit: propTypes.func.isRequired,
+  onSubmit: propTypes.func,
 };

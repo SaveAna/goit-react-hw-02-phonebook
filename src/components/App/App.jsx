@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { nanoid } from 'nanoid';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Container } from './App.styled';
+import { Filter } from 'components/Filter/Filter';
 
 export class App extends Component {
   state = {
@@ -49,7 +49,7 @@ export class App extends Component {
         <ContactForm addContact={this.handleAddContact} />
         <h2> Contacts</h2>
         <Filter value={this.state.filter} onChange={this.onChange} />
-        <ContactList contacts={filteredContacts} handleDelete={this.onDetele} />
+        <ContactList contacts={filteredContacts} handleDelete={this.onDelete} />
       </Container>
     );
   }
